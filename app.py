@@ -5,7 +5,7 @@ import streamlit as st
 import plotly.express as px
 
 
-# This decorator prevents the app from reloading the CSV file every time the user
+# This decorator prevents the app from reloading the CSV file every time the user reload the page
 @st.cache_data
 def read_data(path):
     """
