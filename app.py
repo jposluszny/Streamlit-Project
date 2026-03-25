@@ -101,14 +101,15 @@ def funnel_chart(df):
     """
 
     st.title('Funnel Chart')
-    fig, ax = plt.subplots()
 
-    # Plotly Express to create the funnel chart.
-    px.funnel(df, x='loan_amount', y='sector', color='office')
-    sns.scatterplot(data=df, x='loan_amount', y='funded_amount', ax=ax)
-    ax.set_xlabel('Loan Amount')
-    ax.set_ylabel('Sector')
-    ax.set_title('Loan Amount vs Sector')
+    # Uses Plotly Express to create the funnel chart.
+    fig = px.funnel(df, x='number', y='stage', color='office', title='Loan Amount vs Sector')
+    
+    # Updates the plot's layout, for example, changing the background color.
+    fig.update_layout(
+        paper_bgcolor='rgb(245, 245, 245)'
+    )
+   
     return fig
 
 
