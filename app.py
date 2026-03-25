@@ -24,7 +24,7 @@ def main():
 
     # Creates a sidebar select box for the user to choose which chart to display.
     option = st.sidebar.selectbox(
-        '*Select chart*', ('Line Plot', 'Pie chart', 'Scatter Plot', 'Map'))
+        '*Select chart*', ('Line Plot', 'Pie Chart', 'Scatter Plot', 'Funnel Chart', 'Map'))
 
     # An if/elif/else block checks the user's selection and calls the
     # appropriate plotting function, then displays the resulting chart.
@@ -33,11 +33,11 @@ def main():
         # st.pyplot() is used to render plots created with Matplotlib and Seaborn.
         st.pyplot(fig=line_plot(df))
     elif option == 'Pie chart':
-
-        # st.plotly_chart() is used to render interactive plots from Plotly.
         st.plotly_chart(pie_chart(df))
     elif option == 'Scatter Plot':
         st.pyplot(fig=scatter_plot(df))
+    elif option == 'Funnel Chart':
+        st.pyplot(fig=funnel_chart(df))
     elif option == 'Map':
         st.plotly_chart(map_plot(df))
 
@@ -93,6 +93,22 @@ def scatter_plot(df):
     ax.set_xlabel('Loan Amount')
     ax.set_ylabel('Funded Amount')
     ax.set_title('Funded Amount vs Loan Amount')
+    return fig
+
+def funnel_chart(df):
+    """
+    Generates and returns a Plotly funnel chart.
+    """
+
+    st.title('Funnel Chart')
+    fig, ax = plt.subplots()
+
+    # Plotly Express to create the funnel chart.
+    px.funnel(df, x='loan_amount', y='sector', color='office')
+    sns.scatterplot(data=df, x='loan_amount', y='funded_amount', ax=ax)
+    ax.set_xlabel('Loan Amount')
+    ax.set_ylabel('Sector')
+    ax.set_title('Loan Amount vs Sector')
     return fig
 
 
