@@ -37,7 +37,7 @@ def main():
     elif option == 'Scatter Plot':
         st.pyplot(fig=scatter_plot(df))
     elif option == 'Funnel Chart':
-        st.pyplot(fig=funnel_chart(df))
+        st.plotly_chart(funnel_chart(df))
     elif option == 'Map':
         st.plotly_chart(map_plot(df))
 
