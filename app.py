@@ -54,12 +54,12 @@ def line_plot(df):
     
     # Uses Seaborn to create a line plot. The `ax` parameter specifies the
     # subplot where the plot should be drawn.
-    sns.lineplot(data=df, x='funded_amount', y='loan_amount', ax=ax)
+    sns.lineplot(data=df, x='loan_amount', y='funded_amount', ax=ax)
     
     # Sets the labels for the axes and the title for better readability.
-    ax.set_xlabel('Funded Amount')
-    ax.set_ylabel('Loan Amount')
-    ax.set_title('Loan Amount vs Funded Amount')
+    ax.set_xlabel('Loan Amount')
+    ax.set_ylabel('Funded Amount')
+    ax.set_title('Funded Amount vs Loan Amount')
     return fig
 
 
@@ -89,10 +89,10 @@ def scatter_plot(df):
     fig, ax = plt.subplots()
 
     # Uses Seaborn to create the scatter plot.
-    sns.scatterplot(data=df, x='funded_amount', y='loan_amount', ax=ax)
-    ax.set_xlabel('Funded Amount')
-    ax.set_ylabel('Loan Amount')
-    ax.set_title('Loan Amount vs Funded Amount')
+    sns.scatterplot(data=df, x='loan_amount', y='funded_amount', ax=ax)
+    ax.set_xlabel('Loan Amount')
+    ax.set_ylabel('Funded Amount')
+    ax.set_title('Funded Amount vs Loan Amount')
     return fig
 
 
