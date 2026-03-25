@@ -32,7 +32,7 @@ def main():
 
         # st.pyplot() is used to render plots created with Matplotlib and Seaborn.
         st.pyplot(fig=line_plot(df))
-    elif option == 'Pie chart':
+    elif option == 'Pie Chart':
         st.plotly_chart(pie_chart(df))
     elif option == 'Scatter Plot':
         st.pyplot(fig=scatter_plot(df))
