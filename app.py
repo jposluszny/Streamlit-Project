@@ -103,7 +103,7 @@ def funnel_chart(df):
     st.title('Funnel Chart')
 
     # Uses Plotly Express to create the funnel chart.
-    fig = px.funnel(df, x='number', y='stage', color='office', title='Loan Amount vs Sector')
+    fig = px.funnel(df, x='loan_amount', y='sector', color='office', title='Loan Amount vs Sector')
     
     # Updates the plot's layout, for example, changing the background color.
     fig.update_layout(
