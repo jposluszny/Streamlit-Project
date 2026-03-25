@@ -16,7 +16,7 @@ This project was created to demonstrate proficiency in **Streamlit** as part of 
 ### 🚀 How to Run Locally
 1. Clone the repo: `git clone https://github.com/jposluszny/Streamlit-Project.git`
 2. Install dependencies: `pip install -r requirements.txt`
-3. Run the app: `streamlit app.py`
+3. Run the app: `streamlit run app.py`
 
 ### 🔗 Resources
 * [**📊 Interactive Dashboard (Live)**](https://streaml-project.streamlit.app/) – Access the full interactive report with filters.
